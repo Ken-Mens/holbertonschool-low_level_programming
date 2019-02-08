@@ -8,10 +8,10 @@ int main(void)
 {
 	int tre, way;
 
-	for (tre = '0'; tre <= '8'; tre++)
+		for (tre = '0'; tre <= '8'; tre++)
 	{
-		for (way = tre + 1; way <= '9'; way++)
-		{
+			for (way = tre + 1; way <= '9'; way++)
+			{
 				if (tre != way)
 			{
 					putchar(tre);
@@ -26,7 +26,7 @@ int main(void)
 					putchar(' ');
 				}
 			}
-		}
+			}
 	}
 		putchar('\n');
 		return (0);
