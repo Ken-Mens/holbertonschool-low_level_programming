@@ -1,10 +1,11 @@
 #include "holberton.h"
 
-/** C program that prints text
+/**
+  * main - C program that prints text
   * followed by new line
-  * Return : 0 (success)
+  * Return: 0 (success)
   */
-int main (void)
+int main(void)
 {
 	_putchar('H');
 	_putchar('o');
@@ -15,6 +16,6 @@ int main (void)
 	_putchar('t');
 	_putchar('o');
 	_putchar('n');
-	_putchar('\n');	
-	return(0);
+	_putchar('\n');
+	return (0);
 }
