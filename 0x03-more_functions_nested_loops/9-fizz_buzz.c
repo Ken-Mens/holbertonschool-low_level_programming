@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 /**
  * main - function that prints the numbers from 1 to 100
  * followed by a new line. For every multiple of 3 print Fizz
