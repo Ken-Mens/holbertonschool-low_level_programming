@@ -10,8 +10,7 @@ int _atoi(char *s)
 	int number, i, negative;
 
 	negative = 1;
-	i = number;
-	number = 0;
+	i = number = 0;
 
 	while ((s[i] < '0' || s[i] > '9') && s[i] != 0)
 	{
