@@ -1,19 +1,22 @@
 #include "holberton.h"
 /**
- * _atoi - function that converts a string to an integer
- *@s: character to be converted
+ * _atoi - function that will convert a string of characters
+ * and digits to an integer
+ * @s: character to be converted
  * Return: Always 0.
  */
 int _atoi(char *s)
 {
-	int number, i, neg;
+	int number, i, negative;
 
-	neg = 1;
-	i = number = 0;
+	negative = 1;
+	i = number;
+	number = 0;
+
 	while ((s[i] < '0' || s[i] > '9') && s[i] != 0)
 	{
 		if (s[i] == '-')
-			neg = neg * -1;
+			negative = negative * -1;
 		i++;
 	}
 	while ((s[i] >= '0' && s[i] <= '9') && s[i] != 0)
@@ -29,7 +32,7 @@ int _atoi(char *s)
 			i++;
 		}
 	}
-	neg = neg * -1;
-	return (number * neg);
+	negative = negative * -1;
+	return (number * negative);
 }
 
