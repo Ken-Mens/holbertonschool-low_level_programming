@@ -11,11 +11,11 @@ char *_strcat(char *dest, char *src)
 	char *concat;
 
 	concat = dest;
-	while (*concat != '\0')
+	while (*concat)
 	{
 		concat++;
 	}
-	for (i = 0; src[i] != '\0'; i++)
+	for (i = 0; src[i]; i++)
 	{
 		*concat = src[i];
 		concat++;
