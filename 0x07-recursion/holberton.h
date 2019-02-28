@@ -24,6 +24,6 @@ int _putchar(char c);
 
 int _strlen(char *s, int i);
 
-int _helper_palindrome(char *s,  int len);
+int _helper_prime(int n, int limit);
 
 #endif 
