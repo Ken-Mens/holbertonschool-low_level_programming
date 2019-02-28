@@ -26,4 +26,5 @@ int _strlen(char *s, int i);
 
 int _helper_recursion(int n, int limit);
 
+int _helper_prime(int i, int range);
 #endif 
