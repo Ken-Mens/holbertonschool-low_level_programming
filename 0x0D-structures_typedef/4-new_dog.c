@@ -1,67 +1,60 @@
 #include "dog.h"
 /**
- * _strcpy - copies string pointed to by source to
- * the buffer
- * @dest: destination
- * @src: string to copy
- * Return: pointer to destination.
- */
-char *_strcpy(char *dest, char *src)
+* _strdup - duplicates string.
+* @str: string to be interpreted.
+* Return: pointer.
+*/
+
+char *_strdup(char *str)
 {
-	int copycat;
+	char *point;
+	int j, i = 0;
 
-	for (copycat = 0; (*(src + copycat)); copycat++)
-	{
-		dest[copycat] = src[copycat];
-	}
-	return (dest);
+	if (str == NULL)
+		return (NULL);
+
+	while (str[i] != '\0')
+		i++;
+	i++;
+	point = malloc(sizeof(char) * i);
+
+		for (j = 0; j < i; j++)
+		{
+			point[j] = str[j];
+		}
+	return (point);
 }
+
 /**
- * _strlen - returns lenght of a string
- * @s: character(s)
- * Return: integer.
- */
-
-int _strlen(char *s)
-{
-	int x = 0;
-
-	while (*(s + x))
-	{
-		x++;
-	}
-	return (x);
-}
-/**
- * new_dog - function that frees dogs.
- * @name: character pointer name.
- * @age: float ages.
- * @owner: character pointer owners.
- * Return: new dog.
- */
-
+* new_dog - We're making a new dog.
+* @name: character pointer name.
+* @age: float ages.
+* @owner: character pointer owners.
+* Return: new dog.
+*/
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	char *cpname, *cpowner;
+	dog_t *puppy;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
-		return (NULL);
+	puppy = malloc(sizeof(dog_t));
+		if (puppy == NULL)
+		{
+			return (NULL);
+		}
+	puppy->name = _strdup(name);
+		if (!puppy->name)
+		{
+			free(puppy);
+			return (NULL);
+		}
+	puppy->owner = _strdup(owner);
+		if (!puppy->owner)
+		{
+			free(puppy->name);
+			free(puppy);
+			return (NULL);
+		}
+	puppy->age = age;
 
-	cpname = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (cpname == NULL)
-		return (NULL);
-	_strcpy(cpname, name);
-
-	cpowner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (cpowner == NULL)
-		return (NULL);
-	_strcpy(cpowner, owner);
-
-	new_dog->name = name;
-	new_dog->age = age;
-	new_dog->owner = owner;
-
-	return (new_dog);
+	return (puppy);
 }
