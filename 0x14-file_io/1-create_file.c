@@ -7,7 +7,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int foo, leng = 0, readve;
+	int foo, leng, readve;
 
 	if (filename == NULL)
 		return (-1);
@@ -16,6 +16,10 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (!text_content)
 		return (1);
+		for (leng = 0; text_content[leng] != '\0'; leng++)
+		{
+			;
+		}
 	readve = write(foo, text_content, leng);
 	if (readve == -1)
 		return (-1);
