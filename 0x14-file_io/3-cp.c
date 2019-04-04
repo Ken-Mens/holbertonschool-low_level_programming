@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 	cl_that = close(f_to);
 	if (cl_this == -1)
 	{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_this);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_this), exit(100);
 	}
 		else if (cl_that == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_that);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_that), exit(100);
 		}
 	return (0);
 }
