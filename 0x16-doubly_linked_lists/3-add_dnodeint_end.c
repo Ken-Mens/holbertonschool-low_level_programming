@@ -7,20 +7,25 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *Anode, *temp;
+	dlistint_t *anode, *temp;
 
-	Anode = malloc(sizeof(dlistint_t));
-	if (Anode == NULL)
+	anode = malloc(sizeof(dlistint_t));
+	if (anode == NULL)
 		return (NULL);
-	Anode->n = n;
-	Anode->next = NULL;
-	if (*head == NULL)
-		*head = Anode;
-		Anode->next = NULL;
-	temp = *head;
-	while (temp->next)
-	temp = temp->next;
-	temp->next = Anode;
-	Anode->next = NULL;
-	return (Anode);
+	anode->n = n;
+	if (!*head)
+	{
+		anode->prev = NULL;
+		*head = anode;
+	}
+	else
+	{
+		temp = (*head);
+		while (temp->next != NULL)
+			temp = temp->next;
+		anode->prev = temp;
+		anode->next = NULL;
+		temp->next = anode;
+	}
+	return (anode);
 }
