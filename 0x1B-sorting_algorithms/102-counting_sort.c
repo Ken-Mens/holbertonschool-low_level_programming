@@ -34,8 +34,9 @@ void counting_sort(int *array, size_t size)
 
 	cparray = malloc(cpsize * sizeof(int));
 	for (x = 0; x < cpsize; x++)
-	{
 		cparray[x] = array[x];
+	for (x = 0; x < cpsize; x++)
+	{
 		array[counting[cparray[x]] - 1] = cparray[x];
 		cparray[x]--;
 	}
