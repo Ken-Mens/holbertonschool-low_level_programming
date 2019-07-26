@@ -34,9 +34,11 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		dos = binary_tree_depth(second);
 
 		root = first;
-		while(root)
-		       root = root->parent;
-		while(first != root)
+	while (root)
+	{
+		root = root->parent;
+	}
+		while (first != root)
 		{
 			if (first->parent == second->parent)
 				return (binary_trees_ancestor(first, second));
