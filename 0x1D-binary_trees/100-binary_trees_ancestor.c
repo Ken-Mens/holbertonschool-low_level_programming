@@ -36,8 +36,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	{
 		if (first == second)
 			return ((binary_tree_t *)second);
-		else if (first->parent == second->parent)
-			return (second->parent);
+		first = first->parent;
+		second = second->parent;
 	}
 	if (uno > dos)
 		first = first->parent;
