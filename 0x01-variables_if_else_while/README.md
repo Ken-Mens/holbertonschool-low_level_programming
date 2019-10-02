@@ -68,10 +68,6 @@
 ### [11. Inventing is a combination of brains and materials. The more brains you use, the less material you need](./100-print_comb3.c)
 * A program that prints all possible different combinations of two digits.
 
-
-### [12. The success combination in business is: Do what you do better... and: do more of what you do...](./101-print_comb4.c)
-* A program that prints all possible different combinations of three digits.
-
 ---
 
 ## Author
